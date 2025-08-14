@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hauwa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* --- Base Styling --- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+    a {
+      color: #1b5e20;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Header / Hero Section --- */
+    header {
+      background: linear-gradient(135deg, #1b5e20, #4caf50);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* --- Container --- */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* --- Sections --- */
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-3px);
+    }
+    h2 {
+      color: #2e7d32;
+      border-left: 5px solid #4caf50;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    /* --- Lists & Portfolio Items --- */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    ul li:last-child {
+      border-bottom: none;
+    }
+    .portfolio-item {
+      margin-bottom: 20px;
+    }
+    .portfolio-item h3 {
+      margin-bottom: 5px;
+      color: #1b5e20;
+    }
+    .badge {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background: #1b5e20;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <img src="https://via.placeholder.com/150x150.png?text=H" alt="Hauwa Photo" class="profile-pic">
+    <h1>Hauwa</h1>
+    <p>Registered Community Health Practitioner (RCHP) | CHEW Student</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Personal Info -->
+    <section>
+      <h2>Personal Information</h2>
+      <p><strong>Email:</strong> <em>hauwa@example.com</em></p>
+      <p><strong>WhatsApp:</strong> +234 703 682 8674</p>
+      <p><strong>Current School:</strong> Alma'arif College Of Nursing Midwifery And Health Sciences</p>
+      <p><strong>Course:</strong> Community Health Extension Workers (CHEW)</p>
+      <p><strong>Expected Graduation:</strong> 30 August 2025</p>
+      <p><strong>Title:</strong> Registered Community Health Practitioner (RCHP)</p>
+    </section>
+
+    <!-- Bio -->
+    <section>
+      <h2>About Me</h2>
+      <p>I am a passionate healthcare professional in training, dedicated to improving community health through preventive care, maternal health support, and patient education. My journey in nursing and health sciences has been driven by a deep commitment to serving underserved populations with empathy and professionalism.</p>
+      <p>My career goal is to specialize in rural healthcare delivery, contributing to better maternal and child health outcomes while promoting public health awareness in communities across Nigeria.</p>
+    </section>
+
+    <!-- Achievements -->
+    <section>
+      <h2>Academic Achievements</h2>
+      <ul>
+        <li>Diploma in Community Health – Alma'arif College Of Nursing Midwifery And Health Sciences (Ongoing)</li>
+        <li>Certificate in Public Health Awareness – Nigerian Health Institute, 2023</li>
+      </ul>
+    </section>
+
+    <!-- Portfolio -->
+    <section>
+      <h2>Portfolio</h2>
+
+      <div class="portfolio-item">
+        <h3>Research Project</h3>
+        <p><strong>Title:</strong> Improving Maternal Health Through Community-Based Education</p>
+        <p><strong>Date:</strong> May 2024</p>
+        <p>Conducted a field study on maternal health awareness in rural areas, engaging over 150 women in antenatal care programs.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <h3>Volunteer Work</h3>
+        <p><strong>Role:</strong> Health Outreach Assistant</p>
+        <p><strong>Organization:</strong> Hope for Health Foundation</p>
+        <p><strong>Date:</strong> 2023</p>
+        <p>Assisted in organizing vaccination drives and health screenings for over 300 community members.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <h3>Certifications</h3>
+        <span class="badge">First Aid & CPR</span>
+        <span class="badge">Basic Life Support (BLS)</span>
+        <span class="badge">Infection Prevention</span>
+      </div>
+
+      <div class="portfolio-item">
+        <h3>Practical Experience</h3>
+        <p><strong>Internship:</strong> General Hospital Maiduguri – Clinical Rotations in Outpatient, Maternity, and Immunization Units.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Hauwa | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>￼EnterYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hauwa - RCHP Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* --- Base Styling --- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+    a {
+      color: #1b5e20;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Header / Hero Section --- */
+    header {
+      background: linear-gradient(135deg, #1b5e20, #4caf50);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* --- Container --- */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* --- Sections --- */
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-3px);
+    }
+    h2 {
+      color: #2e7d32;
+      border-left: 5px solid #4caf50;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    /* --- Lists & Portfolio Items --- */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
