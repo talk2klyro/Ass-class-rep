@@ -1,233 +1,248 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hauwa - RCHP Portfolio</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(120deg, #fdfdfd, #f0f7f5);
-    color: #222;
-  }
-  header {
-    height: 100vh;
-    background: linear-gradient(135deg, rgba(194, 84, 143, 0.85), rgba(119, 181, 146, 0.85));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-  }
-  /* Animated waves */
-  header::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff33" fill-opacity="1" d="M0,128L48,128C96,128,192,128,288,133.3C384,139,480,149,576,138.7C672,128,768,96,864,96C960,96,1056,128,1152,138.7C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
-    animation: wave 15s linear infinite;
-    bottom: -50px;
-    left: 0;
-    opacity: 0.6;
-  }
-  @keyframes wave {
-    0% { background-position-x: 0; }
-    100% { background-position-x: 1440px; }
-  }
-  .glass {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 2rem;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    animation: fadeIn 1.5s ease;
-    z-index: 1;
-    position: relative;
-  }
-  .avatar {
-    width: 180px;
-    margin-bottom: 20px;
-  }
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  p {
-    font-size: 1rem;
-    opacity: 0.95;
-  }
-  .btn-container {
-    margin-top: 15px;
-  }
-  .btn {
-    display: inline-block;
-    padding: 10px 18px;
-    margin: 5px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 25px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-  .btn:hover {
-    transform: translateY(-2px);
-  }
-  .btn-whatsapp {
-    background: #25D366;
-  }
-  .btn-email {
-    background: #c2548f;
-  }
-  .container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-  }
-  section {
-    margin-bottom: 40px;
-  }
-  h2 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: #c2548f;
-    position: relative;
-  }
-  h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background: #77b592;
-    margin-top: 5px;
-    border-radius: 2px;
-  }
-  .card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  ul li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-  }
-  .badge {
-    display: inline-block;
-    background: #f3f8f6;
-    color: #77b592;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    margin: 5px 5px 0 0;
-  }
-  footer {
-    background: #77b592;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-  @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hauwa • RCHP Portfolio</title>
+  <!-- Premium fashion-forward typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#1b1b1b;
+      --muted:#6b7280;
+      --bg-start:#fff7fb; /* soft rosy */
+      --bg-end:#f0fff6;   /* mint tint */
+      --brand:#7a3b8f;    /* plum accent */
+      --brand-2:#2e7d6b;  /* deep teal */
+      --card:#ffffff;
+      --ring:rgba(122,59,143,.25);
+      --shadow:0 10px 30px rgba(0,0,0,.06);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background: radial-gradient(1200px 700px at 10% -10%, var(--bg-start), transparent 60%),
+                  radial-gradient(1000px 700px at 100% 0%, var(--bg-end), transparent 55%),
+                  #ffffff;
+      line-height:1.6;
+    }/* Header / Hero */
+.hero{
+  position:relative;
+  padding: 96px 24px 64px;
+  overflow:hidden;
+  text-align:center;
+}
+/* subtle sheen stripe */
+.hero::before{
+  content:"";position:absolute;inset:-40% -20% auto; height:130%;
+  background: linear-gradient(115deg, rgba(255,255,255,.35), rgba(255,255,255,0) 35%);
+  transform: rotate(3deg);
+  pointer-events:none;
+}
+
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;gap:28px;justify-items:center}
+
+/* Elegant SVG avatar with gentle pulse */
+.avatar-wrap{
+  width:168px;height:168px;border-radius:999px;display:grid;place-items:center;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  box-shadow: 0 18px 60px rgba(122,59,143,.25);
+  position:relative;
+  isolation:isolate;
+}
+.avatar-wrap::after{ /* soft ring */
+  content:"";position:absolute;inset:-10px;border-radius:inherit;
+  background: radial-gradient(closest-side, rgba(255,255,255,.35), transparent);
+  filter: blur(8px); z-index:-1;
+}
+
+.avatar{width:98px;height:98px;display:block}
+
+/* Gentle breathing + halo shimmer */
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@keyframes spin-slow{to{transform:rotate(360deg)}}
+.avatar-breath{animation:breathe 6s ease-in-out infinite}
+.avatar-halo{
+  position:absolute;inset:-20px;border-radius:999px;z-index:-1;
+  background: conic-gradient(from 0deg, rgba(122,59,143,.25), rgba(46,125,107,.2), rgba(122,59,143,.25));
+  filter: blur(18px);opacity:.9;animation:spin-slow 16s linear infinite;
+}
+
+h1.title{
+  font-family:'Playfair Display',serif; font-weight:700; letter-spacing:.3px;
+  font-size: clamp(2rem, 3.4vw, 3.2rem); margin:12px 0 6px;
+}
+.subtitle{color:var(--muted);font-weight:500}
+
+.cta{display:flex;gap:12px; flex-wrap:wrap; justify-content:center; margin-top:16px}
+.btn{
+  --bg: var(--brand);
+  --bg2: var(--brand-2);
+  display:inline-flex; align-items:center; gap:10px;
+  padding:12px 18px; border-radius:40px; border:0; cursor:pointer;
+  color:#fff; background:linear-gradient(135deg,var(--bg),var(--bg2));
+  box-shadow:0 10px 24px rgba(122,59,143,.22);
+  text-decoration:none; font-weight:600; letter-spacing:.2px;
+  transition: transform .15s ease, box-shadow .15s ease, filter .2s ease;
+}
+.btn:hover{transform:translateY(-2px); box-shadow:0 14px 28px rgba(122,59,143,.26)}
+.btn:active{transform:translateY(0)}
+.btn svg{width:18px;height:18px}
+.btn.whatsapp{--bg:#25D366; --bg2:#128C7E; box-shadow:0 10px 24px rgba(18,140,126,.18)}
+.btn.email{--bg:#7a3b8f; --bg2:#9a6bb2}
+
+/* Sections */
+.shell{max-width:1100px;margin:0 auto;padding: 24px}
+section.card{
+  background:var(--card); border-radius:var(--radius); padding:26px; margin:18px 0; box-shadow:var(--shadow);
+  border: 1px solid rgba(122,59,143,.06);
+}
+.section-title{
+  font-family:'Playfair Display',serif; font-weight:600; font-size:clamp(1.35rem,2vw,1.8rem);
+  margin:0 0 12px; color:var(--brand);
+}
+.grid{display:grid; gap:16px}
+@media (min-width:900px){
+  .grid-2{grid-template-columns: 1fr 1fr}
+  .grid-3{grid-template-columns: repeat(3, 1fr)}
+}
+
+ul.clean{list-style:none; padding:0; margin:0}
+ul.clean li{padding:10px 0; border-bottom:1px dashed rgba(0,0,0,.06)}
+ul.clean li:last-child{border-bottom:0}
+
+.badge{display:inline-block; padding:8px 12px; border-radius:999px; background:#faf5ff; color:#5b21b6; font-weight:600; font-size:.9rem; margin:6px 8px 0 0; border:1px solid rgba(91,33,182,.12)}
+
+/* Tiny scroll reveal */
+.reveal{opacity:0; transform:translateY(18px); transition:all .6s ease}
+.reveal.in{opacity:1; transform:none}
+
+/* Focus rings */
+a:focus-visible, .btn:focus-visible{outline:3px solid var(--ring); outline-offset:2px; border-radius:44px}
+
+  </style>
 </head>
 <body>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="avatar-wrap">
+        <span class="avatar-halo" aria-hidden="true"></span>
+        <!-- Fashion-forward healthcare SVG avatar (stethoscope + profile) -->
+        <svg class="avatar avatar-breath" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- face/profile silhouette -->
+          <defs>
+            <linearGradient id="gSkin" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+              <stop offset="1" stop-color="#f7f2ff" stop-opacity="1"/>
+            </linearGradient>
+          </defs>
+          <circle cx="64" cy="64" r="56" fill="url(#gSkin)" opacity=".9"/>
+          <path d="M76 46a14 14 0 1 1-28 0a14 14 0 0 1 28 0Z" fill="#d9c7f0"/>
+          <path d="M32 90c4-12 18-20 32-20s28 8 32 20" fill="none" stroke="#c7b3e6" stroke-width="6" stroke-linecap="round"/>
+          <!-- chic stethoscope -->
+          <path d="M98 46c0 10-8 18-18 18" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="100" cy="36" r="8" fill="#ffffff"/>
+          <circle cx="100" cy="36" r="4" fill="#7a3b8f"/>
+        </svg>
+      </div><h1 class="title">Hauwa</h1>
+  <div class="subtitle">Registered Community Health Practitioner (RCHP) • CHEW Student</div>
 
-<!-- Hero -->
-<header>
-  <div class="glass">
-    <!-- Feminine Healthcare Icon -->
-    <svg class="avatar" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 64 64">
-      <circle cx="32" cy="32" r="32" fill="#77b592"/>
-      <path d="M32 16a8 8 0 1 0 8 8 8 8 0 0 0-8-8zm0 18c-7.732 0-14 6.268-14 14v6h28v-6c0-7.732-6.268-14-14-14z" fill="#fff"/>
-    </svg>
-    <h1>Hauwa</h1>
-    <p>Registered Community Health Practitioner (RCHP) | CHEW Student</p>
-    <div class="btn-container">
-      <a href="https://wa.me/2347036828674" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Me</a>
-      <a href="mailto:hauwa@example.com" class="btn btn-email">📧 Email Me</a>
-    </div>
+  <div class="cta" role="group" aria-label="Quick contact">
+    <a class="btn whatsapp" href="https://wa.me/2347036828674?text=Hello%20Hauwa%2C%20I%E2%80%99m%20interested%20in%20your%20healthcare%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <!-- WhatsApp icon -->
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.77 11.77 0 0 0 12.02 0C5.42.01.06 5.37.06 11.98c0 2.11.56 4.17 1.62 5.98L0 24l6.2-1.63a11.93 11.93 0 0 0 5.82 1.49h.01c6.59 0 11.95-5.36 11.95-11.97a11.86 11.86 0 0 0-3.46-8.41ZM12.02 22c-1.86 0-3.67-.5-5.25-1.44l-.38-.23-3.68.97.98-3.59-.25-.37A9.94 9.94 0 0 1 2.06 12C2.06 6.97 6.98 2.05 12.02 2.05A9.93 9.93 0 0 1 22 12.03c0 5.03-4.91 9.97-9.98 9.97Zm5.79-7.43c-.32-.16-1.88-.93-2.16-1.04-.29-.1-.5-.16-.71.16-.2.32-.81 1.03-.99 1.24-.18.2-.36.23-.68.08-.32-.16-1.33-.49-2.54-1.56-.94-.83-1.57-1.86-1.76-2.18-.18-.32-.02-.49.14-.65.14-.14.32-.36.48-.54.16-.18.21-.31.32-.52.11-.2.06-.39-.03-.54-.08-.16-.71-1.72-.97-2.35-.26-.64-.52-.55-.71-.56l-.6-.01c-.2 0-.52.07-.79.39s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.16.2 2.11 3.21 5.11 4.5.71.31 1.27.49 1.7.63.72.23 1.38.2 1.9.12.58-.09 1.88-.77 2.15-1.51.27-.74.27-1.38.19-1.51-.08-.13-.29-.2-.61-.36Z"/></svg>
+      WhatsApp
+    </a>
+    <a class="btn email" href="mailto:hauwa@example.com?subject=Portfolio%20Inquiry&body=Hello%20Hauwa%2C%20I%E2%80%99d%20love%20to%20connect%20about%20your%20healthcare%20experience." aria-label="Send Email">
+      <!-- Mail icon -->
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.5-.5a.5.5 0 0 0-.5.5v.38l8.04 5.36a1 1 0 0 0 1.12 0L21 6.88V6.5a.5.5 0 0 0-.5-.5h-16Zm16 3.12-6.6 4.4a3 3 0 0 1-3.3 0L4 9.62V17.5a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5V9.62Z"/></svg>
+      Email
+    </a>
   </div>
-</header>
-
-<!-- Main -->
-<div class="container">
-  <section>
-    <h2>About Me</h2>
-    <div class="card">
-      <p>I am a passionate healthcare professional in training, dedicated to improving community health through preventive care, maternal health support, and patient education.</p>
-      <p>My goal is to specialize in rural healthcare delivery, improving maternal and child health outcomes and promoting public health awareness in communities across Nigeria.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Academic Achievements</h2>
-    <div class="card">
-      <ul>
-        <li>Diploma in Community Health – Alma'arif College Of Nursing Midwifery And Health Sciences (Ongoing)</li>
-        <li>Certificate in Public Health Awareness – Nigerian Health Institute, 2023</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Portfolio</h2>
-    <div class="card">
-      <h3>Research Project</h3>
-      <p><strong>Title:</strong> Improving Maternal Health Through Community-Based Education</p>
-      <p><strong>Date:</strong> May 2024</p>
-      <p>Conducted a field study on maternal health awareness in rural areas, engaging over 150 women in antenatal care programs.</p>
-    </div>
-    <br>
-    <div class="card">
-      <h3>Volunteer Work</h3>
-      <p><strong>Role:</strong> Health Outreach Assistant</p>
-      <p><strong>Organization:</strong> Hope for Health Foundation</p>
-      <p><strong>Date:</strong> 2023</p>
-      <p>Assisted in organizing vaccination drives and health screenings for over 300 community members.</p>
-    </div>
-    <br>
-    <div class="card">
-      <h3>Certifications</h3>
-      <span class="badge">First Aid & CPR</span>
-      <span class="badge">Basic Life Support (BLS)</span>
-      <span class="badge">Infection Prevention</span>
-    </div>
-    <br>
-    <div class="card">
-      <h3>Practical Experience</h3>
-      <p><strong>Internship:</strong> General Hospital Maiduguri – Clinical Rotations in Outpatient, Maternity, and Immunization Units.</p>
-    </div>
-  </section>
 </div>
 
-<footer>
-  <p>© 2025 Hauwa | All Rights Reserved</p>
-</footer>
+  </header>  <!-- MAIN CONTENT -->  <main class="shell"><!-- Personal Info -->
+<section class="card reveal grid grid-2">
+  <div>
+    <h2 class="section-title">Personal Information</h2>
+    <ul class="clean">
+      <li><strong>Full Name:</strong> Hauwa</li>
+      <li><strong>WhatsApp:</strong> <a href="https://wa.me/2347036828674" target="_blank" rel="noopener">+234 703 682 8674</a></li>
+      <li><strong>Email:</strong> <a href="mailto:hauwa@example.com">hauwa@example.com</a></li>
+      <li><strong>Current School:</strong> Alma'arif College Of Nursing Midwifery And Health Sciences</li>
+      <li><strong>Course:</strong> Community Health Extension Workers (CHEW)</li>
+      <li><strong>Expected Graduation:</strong> 30 August 2025</li>
+      <li><strong>Professional Title:</strong> Registered Community Health Practitioner (RCHP)</li>
+    </ul>
+  </div>
+  <div>
+    <h2 class="section-title">Profile & Bio</h2>
+    <p style="margin:0 0 10px">I am a community health advocate in training with a fashion-forward eye for presentation and a heart for patient-centered care. I thrive at the intersection of clinical skill, empathy, and elegant communication.</p>
+    <p style="margin:0">Career Goals: advance maternal & child health in underserved communities, champion preventive education, and grow into a leadership role as an RCHP.</p>
+  </div>
+</section>
 
-</body>
-  </html>
+<!-- Achievements -->
+<section class="card reveal">
+  <h2 class="section-title">Academic Achievements</h2>
+  <ul class="clean">
+    <li>Diploma in Community Health — Alma'arif College Of Nursing Midwifery And Health Sciences (Ongoing)</li>
+    <li>Certificate — Public Health Awareness (Nigerian Health Institute, 2023)</li>
+  </ul>
+</section>
+
+<!-- Portfolio -->
+<section class="card reveal">
+  <h2 class="section-title">Portfolio Highlights</h2>
+  <div class="grid grid-3">
+    <div class="mini card" style="box-shadow:none;border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:16px">
+      <h3 style="margin:0 0 6px; font-size:1.05rem; font-weight:600">Research Project</h3>
+      <div style="color:var(--muted); font-size:.95rem; margin-bottom:8px">May 2024</div>
+      <p style="margin:0">Improving <em>Maternal Health</em> through community-based education; engaged 150+ women in ANC programs and measured knowledge gains.</p>
+    </div>
+    <div class="mini card" style="box-shadow:none;border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:16px">
+      <h3 style="margin:0 0 6px; font-size:1.05rem; font-weight:600">Volunteer Work</h3>
+      <div style="color:var(--muted); font-size:.95rem; margin-bottom:8px">Hope for Health Foundation • 2023</div>
+      <p style="margin:0">Supported vaccination drives & screenings for 300+ residents; coordinated patient flow and education stations.</p>
+    </div>
+    <div class="mini card" style="box-shadow:none;border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:16px">
+      <h3 style="margin:0 0 6px; font-size:1.05rem; font-weight:600">Practical Experience</h3>
+      <div style="color:var(--muted); font-size:.95rem; margin-bottom:8px">General Hospital Maiduguri</div>
+      <p style="margin:0">Rotations across Outpatient, Maternity & Immunization; triage, vitals, documentation, and patient education.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:12px">
+    <span class="badge">First Aid &amp; CPR</span>
+    <span class="badge">Basic Life Support (BLS)</span>
+    <span class="badge">Infection Prevention</span>
+  </div>
+</section>
+
+<!-- Contact strip -->
+<section class="card reveal" aria-label="Quick contact actions">
+  <h2 class="section-title">Connect with Hauwa</h2>
+  <div class="cta">
+    <a class="btn whatsapp" href="https://wa.me/2347036828674?text=Hello%20Hauwa%2C%20I%E2%80%99d%20love%20to%20connect%20about%20your%20healthcare%20experience." target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn email" href="mailto:hauwa@example.com?subject=Portfolio%20Inquiry">Email</a>
+  </div>
+</section>
+
+  </main>  <footer style="text-align:center; padding:28px 16px; color:var(--muted)">
+    © 2025 Hauwa • RCHP Portfolio
+  </footer>  <script>
+    // minimal scroll reveal
+    const onScroll = () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 80) el.classList.add('in');
+      });
+    };
+    document.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('load', onScroll);
+  </script></body>
+            </html>
